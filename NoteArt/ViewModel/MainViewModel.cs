@@ -31,7 +31,8 @@ namespace NoteArt.ViewModel
             Close = new RelayCommand(() =>
             {
                 MessageBox.Show(String.Join(",", Titles));
-                //·¢ËÍÏûÏ¢
+                //Send message to messenger, the eventhandler registered in MainWindow.xaml.cs with same type will be triggered
+                Messenger.Default.Send(Convert.ToUInt32(5));
                 Messenger.Default.Send(new DateTime());
             });
         }

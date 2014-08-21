@@ -14,12 +14,19 @@ namespace NoteArt.View
         public MainWindow()
         {
             InitializeComponent();
-            //接收消息
+            //receive message,
             Messenger.Default.Register<DateTime>(this, (d) =>
             {
                 MessageBox.Show(this, d.ToString() + "_" + ViewModelLocator.Locator.GetExports<string>("MainTitle").Count());
+                //Close the main window (exit programme at this point)
                 this.Close();
             });
+
+            Messenger.Default.Register<UInt32>(this, (v) =>
+                {
+                    MessageBox.Show(this, v.ToString());
+
+                });
         }
     }
 }
