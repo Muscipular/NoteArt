@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Composition;
 using System.Windows;
@@ -30,6 +31,19 @@ namespace NoteArt.ViewModel
 
             Close = new RelayCommand(() =>
             {
+                Microsoft.Win32.OpenFileDialog of = new Microsoft.Win32.OpenFileDialog();
+                of.DefaultExt = ".txt";
+                of.Filter = "Text File|*.txt";
+                of.Multiselect = false;
+                of.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+                Nullable<bool> result = of.ShowDialog();
+
+                if (result == true)
+                {
+                    Parser p = new Parser(of.FileName);
+                }
+
                 MessageBox.Show(String.Join(",", Titles));
                 //Send message to messenger, the eventhandler registered in MainWindow.xaml.cs with same type will be triggered
                 Messenger.Default.Send(Convert.ToUInt32(5));
