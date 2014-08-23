@@ -28,5 +28,22 @@ namespace NoteArt.View
 
                 });
         }
+
+        private void buttonOpenFile_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog of = new Microsoft.Win32.OpenFileDialog();
+            of.DefaultExt = ".txt";
+            of.Filter = "Text File|*.txt|Osu Format|*.osu";
+            of.Multiselect = false;
+            of.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            Nullable<bool> result = of.ShowDialog();
+
+            if (result == true)
+            {
+                OpenFileTextbox.Text = of.FileName;
+                //OsuParser p = new OsuParser(of.FileName);
+            }
+        }
     }
 }
