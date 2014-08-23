@@ -1,4 +1,4 @@
-﻿<Window x:Name="WindowMain" x:Class="NoteArt.View.MainWindow"
+﻿<Window x:Name="WindowMain" x:Class="NoteArt.View.MainWindow" MouseDown="WindowMain_MouseDown"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="{DynamicResource DlgTitle}" Height="720" Width="1024" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="#FF202020" AllowsTransparency="True" Icon="/NoteArt;component/malodyicon.ico">
@@ -21,7 +21,8 @@ Width="300" />
                     <GradientStop Color="#FF484848" Offset="1"/>
                 </LinearGradientBrush>
             </Menu.Background>
-            <MenuItem HorizontalAlignment="Left" Height="18" Width ="70" Margin=" 6,6,0,0" Header="Click me" Foreground="#ffffffff">
+            <MenuItem Header="M" FontStretch="UltraExpanded" Foreground="#FFFF0060" FontSize="18" FontWeight="ExtraBold" FontFamily="Tahoma" Margin="6,3,0,0"/>
+            <MenuItem HorizontalAlignment="Center" VerticalAlignment="Center" Height="21" Width ="70" Margin=" 36,0,0,0" Header="Click me" Foreground="#ffffffff" Click="MenuItem_Click">
                 <MenuItem.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF484848" Offset="0"/>

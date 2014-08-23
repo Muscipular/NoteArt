@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Windows;
+using System.Drawing;
+using System.Windows.Media;
+using System.Windows.Shapes;
+using System.Windows.Controls;
 using GalaSoft.MvvmLight.Messaging;
 using NoteArt.Lib;
 
@@ -45,5 +49,25 @@ namespace NoteArt.View
                 //OsuParser p = new OsuParser(of.FileName);
             }
         }
+
+        private void WindowMain_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
+            {
+                DrawEdgeRectangle();
+                DragMove();
+            }
+        }
+
+        private void DrawEdgeRectangle()
+        {
+            
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            LocalisationManager inst = LocalisationManager.Instance;
+        }
+
     }
 }

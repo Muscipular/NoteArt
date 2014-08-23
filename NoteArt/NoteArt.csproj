@@ -87,6 +87,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Lib\LocalisationManager.cs" />
     <Compile Include="Lib\ViewModelLocator.cs" />
     <Compile Include="Lib\Parser.cs" />
     <Compile Include="Lib\MapLoader.cs" />
@@ -141,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="malodyicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\en.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
