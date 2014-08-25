@@ -5,6 +5,10 @@ using System.Drawing;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using System.Windows.Controls;
+using System.Collections.Generic;
+using System.Text;
+using System.Net;
+using System.Net.Sockets;
 using GalaSoft.MvvmLight.Messaging;
 using NoteArt.Lib;
 
@@ -66,7 +70,30 @@ namespace NoteArt.View
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            LocalisationManager inst = LocalisationManager.Instance;
+            try
+            {
+                int port = 28571;
+                string host = "127.0.0.1";
+
+                IPAddress ip = IPAddress.Parse(host);
+                IPEndPoint ipe = new IPEndPoint(ip, port);
+
+                Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                s.Connect(ipe);
+
+                byte[] buffer = Encoding.ASCII.GetBytes("Hello Malody, I'm Editor");
+                s.Send(buffer, buffer.Length, 0);
+
+                s.Close();
+            }
+            catch (ArgumentNullException exc)
+            {
+            }
+            catch (SocketException exc)
+            {
+            }
+
+            //LocalisationManager inst = LocalisationManager.Instance;
         }
 
     }
