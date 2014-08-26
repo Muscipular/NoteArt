@@ -91,11 +91,13 @@
     <Compile Include="Lib\ViewModelLocator.cs" />
     <Compile Include="Lib\Parser.cs" />
     <Compile Include="Lib\MapLoader.cs" />
+    <Compile Include="Lib\WinAPIs.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\VMBase.cs" />
     <Compile Include="ViewModel\UIViewModel.cs" />
     <Compile Include="ViewModel\Windows\MainVM.cs" />
     <Compile Include="View\Controls\BorderEx.cs" />
+    <Compile Include="View\Controls\NAWindow.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>

@@ -1,4 +1,4 @@
-﻿<controls:WindowEx x:Class="NoteArt.View.Windows.MainWindow"
+﻿<controls:NAWindow x:Class="NoteArt.View.Windows.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:view="clr-namespace:NoteArt.View"
@@ -17,7 +17,10 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <controls:BorderEx MouseLeftButtonDown="WindowTitleClick" Style="{StaticResource Window_TitleBar_Border}">
+        <controls:BorderEx
+            MouseLeftButtonDown="WindowTitleClick" 
+            MouseLeftButtonUp="WindowTitleClick"
+            Style="{StaticResource Window_TitleBar_Border}">
             <Canvas>
                 <Image Source="/NoteArt;component/Resources/Images/logo.png" SnapsToDevicePixels="True" Margin="0,2,0,0" Stretch="None"></Image>
                 <Menu Canvas.Left="42">
@@ -27,4 +30,4 @@
             </Canvas>
         </controls:BorderEx>
     </Grid>
-</controls:WindowEx>
+</controls:NAWindow>
