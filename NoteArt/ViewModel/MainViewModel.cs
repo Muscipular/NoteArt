@@ -11,7 +11,7 @@ using GalaSoft.MvvmLight.Messaging;
 namespace NoteArt.ViewModel
 {
     [Export]
-    public class MainViewModel : ViewModelBase
+    public class MainViewModel : VMBase
     {
         [ImportMany("MainTitle")]
         public IEnumerable<string> Titles { get; set; }

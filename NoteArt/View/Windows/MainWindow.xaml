@@ -1,0 +1,30 @@
+﻿<controls:WindowEx x:Class="NoteArt.View.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:view="clr-namespace:NoteArt.View"
+        xmlns:controls="clr-namespace:NoteArt.View.Controls"
+        Style="{StaticResource Window_Default_Style}"
+        RenderOptions.BitmapScalingMode="NearestNeighbor"
+        Title="MainWindow" Height="{Binding Height}" Width="{Binding Width}">
+    <Window.DataContext>
+        <Binding Source="{StaticResource Locator}" Path="MainVM"></Binding>
+    </Window.DataContext>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Resources/I18N/zh-cn/MainWindow.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <controls:BorderEx MouseLeftButtonDown="WindowTitleClick" Style="{StaticResource Window_TitleBar_Border}">
+            <Canvas>
+                <Image Source="/NoteArt;component/Resources/Images/logo.png" SnapsToDevicePixels="True" Margin="0,2,0,0" Stretch="None"></Image>
+                <Menu Canvas.Left="42">
+                    <MenuItem Header="{DynamicResource Menu_File}" Style="{StaticResource TitleBar_MenuItem}"></MenuItem>
+                    <MenuItem Header="{DynamicResource Menu_Edit}" Style="{StaticResource TitleBar_MenuItem}"></MenuItem>
+                </Menu>
+            </Canvas>
+        </controls:BorderEx>
+    </Grid>
+</controls:WindowEx>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Composition.Hosting;
 using System.Composition.Hosting.Core;
 using NoteArt.ViewModel;
+using NoteArt.ViewModel.Windows;
 
 namespace NoteArt.Lib
 {
@@ -20,13 +21,8 @@ namespace NoteArt.Lib
         public ViewModelLocator()
         {
             container = new ContainerConfiguration()
-                .WithAssembly(typeof(MainViewModel).Assembly)
+                .WithAssembly(typeof(ViewModelLocator).Assembly)
                 .CreateContainer();
-        }
-
-        public MainViewModel Main
-        {
-            get { return container.GetExport<MainViewModel>(); }
         }
 
         public TExport GetExport<TExport>()
@@ -99,17 +95,23 @@ namespace NoteArt.Lib
             return container.TryGetExport(contract, out export);
         }
 
-//        public static ViewModelLocator _ModelLocator;
-        public static ViewModelLocator Locator { get { return App.Current.Resources["Locator"] as ViewModelLocator; } }
-//
-//        public static void Cleanup()
-//        {
-//            // TODO Clear the ViewModels ’‚ «∏ˆ…∂£ø
-//        }
-
         public void Dispose()
         {
             container.Dispose();
+        }
+
+//        public static ViewModelLocator _ModelLocator;
+        public static ViewModelLocator Locator { get { return App.Current.Resources["Locator"] as ViewModelLocator; } }
+
+
+        public MainViewModel Main
+        {
+            get { return container.GetExport<MainViewModel>(); }
+        }
+
+        public MainVM MainVM
+        {
+            get { return container.GetExport<MainVM>(); }
         }
     }
 }
