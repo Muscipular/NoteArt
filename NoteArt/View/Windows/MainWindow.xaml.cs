@@ -23,6 +23,8 @@ namespace NoteArt.View.Windows
         public MainWindow()
         {
             InitializeComponent();
+            this.Resources.MergedDictionaries.RemoveAt(0);
+            this.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri("../../Resources/I18N/en-us/MainWindow.xaml", UriKind.Relative) });
         }
 
         private void DrawEdgeRectangle()

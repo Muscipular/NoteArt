@@ -21,13 +21,31 @@
             MouseLeftButtonDown="WindowTitleClick" 
             MouseLeftButtonUp="WindowTitleClick"
             Style="{StaticResource Window_TitleBar_Border}">
-            <Canvas>
-                <Image Source="/NoteArt;component/Resources/Images/logo.png" SnapsToDevicePixels="True" Margin="0,2,0,0" Stretch="None"></Image>
-                <Menu Canvas.Left="42">
-                    <MenuItem Header="{DynamicResource Menu_File}" Style="{StaticResource TitleBar_MenuItem}"></MenuItem>
-                    <MenuItem Header="{DynamicResource Menu_Edit}" Style="{StaticResource TitleBar_MenuItem}"></MenuItem>
-                </Menu>
-            </Canvas>
+            <Grid>
+        		<Image Source="/NoteArt;component/Resources/Images/logo.png" SnapsToDevicePixels="True" Margin="0,2" Stretch="None" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        		<Menu Margin="42,0,0,0" HorizontalAlignment="Left">
+        			<MenuItem Header="{DynamicResource Menu_File}" Style="{StaticResource TitleBar_MenuItem}"/>
+        			<MenuItem Header="{DynamicResource Menu_Edit}" Style="{StaticResource TitleBar_MenuItem}"/>
+        		</Menu>
+        		<Button Content="×" Margin="965,2,3,1.5" Width="40" Height="32" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        		<Button Content="口" Margin="0,2,45,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="40" Height="32"/>				
+        		<Button Content="—" Margin="0,2,87,0" Width="40" Height="32" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        		<TextBlock Text="Note Art" TextAlignment="Center" Margin="0" FontSize="18.667" VerticalAlignment="Center" />
+        	</Grid>
         </controls:BorderEx>
+        <controls:BorderEx Margin="0,50,0,0" VerticalAlignment="Top" Style="{StaticResource Window_TitleBar_Border}" Padding="0" >
+        	<controls:DragableControl/>
+        </controls:BorderEx>
+        <StackPanel Margin="0,100,0,0" Orientation="Vertical" HorizontalAlignment="Left">
+        	<controls:BorderEx VerticalAlignment="Top" Style="{StaticResource Window_TitleBar_Border}" Padding="0" Width="150" HorizontalAlignment="Left" Height="200" RightBorderBrush="Black" BorderThickness="1" >
+        		<controls:DragableControl DragBarLocation="Top"/>
+        	</controls:BorderEx>
+        	<controls:BorderEx VerticalAlignment="Top" Style="{StaticResource Window_TitleBar_Border}" Padding="0" Width="150" HorizontalAlignment="Left" Height="200" RightBorderBrush="Black" BorderThickness="1" >
+        		<controls:DragableControl DragBarLocation="Top"/>
+        	</controls:BorderEx>
+        	<controls:BorderEx VerticalAlignment="Stretch" Style="{StaticResource Window_TitleBar_Border}" Padding="0" Width="150" HorizontalAlignment="Left" Height="200" RightBorderBrush="Black" BorderThickness="1" >
+        		<controls:DragableControl DragBarLocation="Top"/>
+        	</controls:BorderEx>
+        </StackPanel>
     </Grid>
 </controls:NAWindow>

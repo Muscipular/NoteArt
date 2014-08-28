@@ -7,14 +7,15 @@
             d1p1:Ignorable="d"
             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
     <!-- StartupUri is the startup entry of whole program -->
-    
+
     <Application.Resources>
-     <ResourceDictionary>
-         <ResourceDictionary.MergedDictionaries>
-             <ResourceDictionary Source="Resources/Styles/AppStyles.xaml"></ResourceDictionary>
-             <ResourceDictionary Source="Resources/ViewModelLocator.xaml"></ResourceDictionary>
-             <ResourceDictionary Source="Resources/TextResource.xaml"></ResourceDictionary>
-         </ResourceDictionary.MergedDictionaries>
-     </ResourceDictionary>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/AppStyles.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/Generic.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resources/ViewModelLocator.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Resources/TextResource.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

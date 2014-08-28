@@ -26,7 +26,7 @@
             </Setter.Value>
         </Setter>
         <Setter Property="Background" Value="{StaticResource Window_Backgroud}"></Setter>
-        <Setter Property="Height" Value="52"></Setter>
+        <Setter Property="Height" Value="50"></Setter>
         <Setter Property="VerticalAlignment" Value="Top"></Setter>
         <Setter Property="Padding" Value="11,7,4,7"></Setter>
     </Style>
