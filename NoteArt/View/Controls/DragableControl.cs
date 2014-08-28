@@ -49,6 +49,15 @@ namespace NoteArt.View.Controls
             set { SetValue(DragBarLocationProperty, value); }
         }
 
+        public static readonly DependencyProperty ThicknessProperty = DependencyProperty.Register(
+            "Thickness", typeof(double), typeof(DragBar), new PropertyMetadata(0.8));
+
+        public double Thickness
+        {
+            get { return (double) GetValue(ThicknessProperty); }
+            set { SetValue(ThicknessProperty, value); }
+        }
+
         //        public static readonly DependencyProperty DragBarBrush2Property = DependencyProperty.Register(
         //            "DragBarBrush2", typeof(Brush), typeof(DragBar), new PropertyMetadata(new SolidColorBrush(Color.FromArgb(0x3f, 0xff, 0xff, 0xff))));
         //
@@ -64,7 +73,8 @@ namespace NoteArt.View.Controls
         protected override void OnRender(DrawingContext drawingContext)
         {
             var pen = drawPen ?? (drawPen = new Pen());
-            pen.Thickness = 0.8;
+            var thickness = Thickness;
+            pen.Thickness = thickness;
             pen.Brush = DragBarBrush;
             //            var pen2 = drawPen2 ?? (drawPen2 = new Pen());
             //            pen2.Thickness = 1;
@@ -82,7 +92,7 @@ namespace NoteArt.View.Controls
                         {
                             drawingContext.DrawLine(pen, new Point(startX, i), new Point(startX + 5, i));
                             drawingContext.PushOpacity(0.12);
-                            drawingContext.DrawLine(pen, new Point(startX + 1, i + 1), new Point(startX + 5 + 1, i + 1));
+                            drawingContext.DrawLine(pen, new Point(startX + 1, i + thickness), new Point(startX + 5 + 1, i + thickness));
                             drawingContext.Pop();
                         }
                         break;
@@ -96,7 +106,7 @@ namespace NoteArt.View.Controls
                         {
                             drawingContext.DrawLine(pen, new Point(i, startY), new Point(i, startY + 5));
                             drawingContext.PushOpacity(0.12);
-                            drawingContext.DrawLine(pen, new Point(i + 1, startY + 1), new Point(i + 1, startY + 5 + 1));
+                            drawingContext.DrawLine(pen, new Point(i + thickness, startY + 1), new Point(i + thickness, startY + 5 + 1));
                             drawingContext.Pop();
                         }
                         break;
