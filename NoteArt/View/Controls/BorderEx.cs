@@ -64,14 +64,6 @@ namespace NoteArt.View.Controls
                 var d = pen.Thickness * 0.5;
                 dc.DrawLine(pen, new Point(d, 0), new Point(d, RenderSize.Height));
             }
-            if (thickness.Right > 0.0)
-            {
-                var pen = RightPenCache ?? (RightPenCache = new Pen());
-                pen.Brush = RightBorderBrush;
-                pen.Thickness = thickness.Right;
-                var d = pen.Thickness * 0.5;
-                dc.DrawLine(pen, new Point(RenderSize.Width - d, 0), new Point(RenderSize.Width - d, RenderSize.Height));
-            }
             if (thickness.Top > 0.0)
             {
                 var pen = TopPenCache ?? (TopPenCache = new Pen());
@@ -79,6 +71,14 @@ namespace NoteArt.View.Controls
                 pen.Thickness = thickness.Top;
                 var d = pen.Thickness * 0.5;
                 dc.DrawLine(pen, new Point(0, d), new Point(RenderSize.Width, d));
+            }
+            if (thickness.Right > 0.0)
+            {
+                var pen = RightPenCache ?? (RightPenCache = new Pen());
+                pen.Brush = RightBorderBrush;
+                pen.Thickness = thickness.Right;
+                var d = pen.Thickness * 0.5;
+                dc.DrawLine(pen, new Point(RenderSize.Width - d, 0), new Point(RenderSize.Width - d, RenderSize.Height));
             }
             if (thickness.Bottom > 0.0)
             {

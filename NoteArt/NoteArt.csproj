@@ -99,6 +99,7 @@
     <Compile Include="ViewModel\Windows\MainVM.cs" />
     <Compile Include="View\Controls\BorderEx.cs" />
     <Compile Include="View\Controls\DragableControl.cs" />
+    <Compile Include="View\Controls\DragableGroup.cs" />
     <Compile Include="View\Controls\NAWindow.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -131,7 +132,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\Generic.xaml">
+    <Page Include="Themes\DragableGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DragableControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
