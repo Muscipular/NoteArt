@@ -25,7 +25,7 @@ namespace NoteArt.View.Controls
 
         public DragableControl()
         {
-
+            
         }
     }
 

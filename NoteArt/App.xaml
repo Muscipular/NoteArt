@@ -12,8 +12,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/AppStyles.xaml"></ResourceDictionary>
-                <ResourceDictionary Source="Themes/DragableControl.xaml"></ResourceDictionary>
-                <ResourceDictionary Source="Themes/DragableGroup.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="View/Controls/DragableControl.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="View/Controls/DragableGroupControl.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resources/ViewModelLocator.xaml"></ResourceDictionary>
                 <ResourceDictionary Source="Resources/TextResource.xaml"></ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>

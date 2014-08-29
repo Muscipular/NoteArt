@@ -3,11 +3,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:NoteArt.View.Controls">
 
-
-    <Style TargetType="{x:Type local:DragableGroup}">
+    <Style TargetType="{x:Type local:DragableGroupControl}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:DragableGroup}">
+                <ControlTemplate TargetType="{x:Type local:DragableGroupControl}">
                     <Grid>
                 		<Grid x:Name="grid" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="16" Visibility="Hidden" Margin="1,0,0,0">
                 			<Grid.Background>
@@ -28,8 +27,8 @@
 								</Path.Effect>
 							</Path>
                 		</Grid>
-                		<ContentPresenter x:Name="contentPresenter" VerticalAlignment="Stretch" Margin="0" Content="{TemplateBinding Content}"/>
-                	</Grid>
+                        <ItemsPresenter x:Name="contentPresenter" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Grid>
                 	<ControlTemplate.Triggers>
                 		<MultiTrigger>
                 			<MultiTrigger.Conditions>
@@ -90,6 +89,13 @@
 							</MultiTrigger>
                 	</ControlTemplate.Triggers>
                 </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ContentPresenter x:Name="contentPresenter" Content="{Binding}"/>
+                </DataTemplate>
             </Setter.Value>
         </Setter>
     </Style>

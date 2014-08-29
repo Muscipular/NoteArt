@@ -99,7 +99,7 @@
     <Compile Include="ViewModel\Windows\MainVM.cs" />
     <Compile Include="View\Controls\BorderEx.cs" />
     <Compile Include="View\Controls\DragableControl.cs" />
-    <Compile Include="View\Controls\DragableGroup.cs" />
+    <Compile Include="View\Controls\DragableGroupControl.cs" />
     <Compile Include="View\Controls\NAWindow.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -132,11 +132,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\DragableGroup.xaml">
+    <Page Include="View\Controls\DragableGroupControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Themes\DragableControl.xaml">
+    <Page Include="View\Controls\DragableControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -185,6 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Themes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
