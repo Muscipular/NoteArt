@@ -27,12 +27,21 @@
         			<MenuItem Header="{DynamicResource Menu_File}" Style="{StaticResource TitleBar_MenuItem}"/>
         			<MenuItem Header="{DynamicResource Menu_Edit}" Style="{StaticResource TitleBar_MenuItem}"/>
         		</Menu>
-        		<Button Content="×" Margin="965,2,3,1.5" Width="40" Height="32" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-        		<Button Content="口" Margin="0,2,45,0" HorizontalAlignment="Right" VerticalAlignment="Top" Width="40" Height="32"/>				
-        		<Button Content="—" Margin="0,2,87,0" Width="40" Height="32" HorizontalAlignment="Right" VerticalAlignment="Top"/>
         		<TextBlock Text="Note Art" TextAlignment="Center" Margin="0" FontSize="18.667" VerticalAlignment="Center" />
         	</Grid>
         </controls:BorderEx>
+        <Border Margin="0,3,2,0" HorizontalAlignment="Right" VerticalAlignment="Top" BorderThickness="1" BorderBrush="Black" SnapsToDevicePixels="True" CornerRadius="5" >
+        	<Border.Effect>
+        		<DropShadowEffect Color="White" Direction="300" ShadowDepth="1" BlurRadius="1.5" Opacity="0.15"/>
+        	</Border.Effect>
+        	<StackPanel Orientation="Horizontal" Height="26" HorizontalAlignment="Right">
+        		<Button Content="—" Click="Window_Min" Width="34" Height="26" HorizontalAlignment="Right" VerticalAlignment="Top" Template="{StaticResource Window_Title_Bar_Button}" BorderBrush="#FF303030" BorderThickness="1,1,0,1"/>
+        		<Rectangle Fill="Black" Stroke="Black" HorizontalAlignment="Left" StrokeThickness="0" Width="1" SnapsToDevicePixels="True"/>
+                <Button Content="口" Click="Window_SizeToggle" Width="34" Height="26" HorizontalAlignment="Right" VerticalAlignment="Top" Template="{StaticResource Window_Title_Bar_Button}" BorderBrush="#FF303030" BorderThickness="1,1,0,1"/>
+        		<Rectangle Fill="Black" Stroke="Black" HorizontalAlignment="Left" StrokeThickness="0" Width="1" SnapsToDevicePixels="True"/>
+                <Button Content="×" Click="Window_Close" Width="48" HorizontalAlignment="Right" VerticalAlignment="Top" Template="{StaticResource Window_Title_Bar_Button}" BorderBrush="#FF303030" Height="26" IsEnabled="False"/>
+        	</StackPanel>
+        </Border>
         <controls:BorderEx Margin="0,50,0,0" VerticalAlignment="Top" Style="{StaticResource Window_TitleBar_Border}" Padding="0" >
         	<controls:DragableGroupControl VerticalAlignment="Top" Height="50">
         		<controls:DragableControl Margin="0" Height="50"/>

@@ -82,10 +82,32 @@ namespace NoteArt.View.Windows
                 var p = this.PointToScreen(mousePoint);
                 this.Left = mousePoint.X - Width / 2;
                 this.Top = mousePoint.Y - 26;
-                Debug.WriteLine("mousePoint: {0} {1}", mousePoint.X, mousePoint.Y);
-                Debug.WriteLine("mousePoint2: {0} {1}", p.X, p.Y);
+//                Debug.WriteLine("mousePoint: {0} {1}", mousePoint.X, mousePoint.Y);
+//                Debug.WriteLine("mousePoint2: {0} {1}", p.X, p.Y);
                 DragMove();
             }
+        }
+
+        private void Window_Close(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Window_SizeToggle(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+            }
+            if (this.WindowState == WindowState.Normal)
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void Window_Min(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }
