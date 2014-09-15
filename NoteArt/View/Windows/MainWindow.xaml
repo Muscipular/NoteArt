@@ -48,9 +48,9 @@
         	</controls:DragableGroupControl>
         </controls:BorderEx>
         <controls:DragableGroupControl Margin="0,100,0,0" CanDrag="True" DragableGroupLocation="Top" HorizontalAlignment="Left" Width="150">
-        	<controls:BorderEx VerticalAlignment="Top" Style="{StaticResource Window_TitleBar_Border}" Padding="0" Height="200" RightBorderBrush="Black" BorderThickness="0,1,1,1" >
+        	<controls:BorderEx VerticalAlignment="Top" Style="{StaticResource Window_TitleBar_Border}" Padding="0" Height="156" RightBorderBrush="Black" BorderThickness="0,1,1,1" >
         		<controls:DragableControl DragBarLocation="Top">
-        			<Canvas Margin="10,0,79,118">
+        			<Canvas Margin="12,0,12,10">
         				<Button Content="Button" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Style="{DynamicResource RadiusButton}"/>
         				<Button Content="Button" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Style="{DynamicResource RadiusButton}" Canvas.Left="65"/>
         				<Button Content="Button" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Style="{DynamicResource RadiusButton}" Canvas.Top="65"/>
@@ -59,7 +59,19 @@
         		</controls:DragableControl>
         	</controls:BorderEx>
         	<controls:BorderEx Style="{StaticResource Window_TitleBar_Border}" Padding="0" Height="200" RightBorderBrush="Black" BorderThickness="0,1,1,1" VerticalAlignment="Top" >
-        		<controls:DragableControl DragBarLocation="Top"/>
+        		<controls:DragableControl DragBarLocation="Top">
+        			<Canvas Margin="0">
+        				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="声音设置" VerticalAlignment="Top" Canvas.Left="15.327" FontSize="14.667" Foreground="#FFC8C8C8"/>
+        				<Button Content="设置" HorizontalAlignment="Left" Height="20.32" VerticalAlignment="Top" Width="43.167" Canvas.Left="87.001" Style="{DynamicResource Button_Normal}" Foreground="#FFC8C8C8" Canvas.Top="0.153" FontSize="10.667">
+        					<Button.Background>
+        						<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        							<GradientStop Color="Black" Offset="0"/>
+        							<GradientStop Color="White" Offset="1"/>
+        						</LinearGradientBrush>
+        					</Button.Background>
+        				</Button>
+        			</Canvas>
+        		</controls:DragableControl>
         	</controls:BorderEx>
         	<controls:BorderEx VerticalAlignment="Stretch" Style="{StaticResource Window_TitleBar_Border}" Padding="0" Height="255.5" RightBorderBrush="Black" BorderThickness="0,1,1,1" >
         		<controls:DragableControl DragBarLocation="Top"/>
